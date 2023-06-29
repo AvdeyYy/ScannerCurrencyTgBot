@@ -1,6 +1,5 @@
 package com.example.ValueScannerBot.botConfig;
 
-import com.example.ValueScannerBot.bot.CryptoScannerBot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -19,7 +18,7 @@ public class Initializer {
     public void init() {
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-            telegramBotsApi.registerBot((LongPollingBot) bot);
+            telegramBotsApi.registerBot(bot);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
