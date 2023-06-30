@@ -2,6 +2,8 @@ package com.example.ValueScannerBot.botConfig;
 import com.example.ValueScannerBot.dto.CourseDto;
 import com.example.ValueScannerBot.enums.ButtonEnum;
 import com.example.ValueScannerBot.enums.MessageEnum;
+import com.example.ValueScannerBot.service.CourseParserService;
+import com.example.ValueScannerBot.service.DtoService;
 import com.example.ValueScannerBot.telegram.keyboards.ReplyKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +18,11 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class CryptoScannerBot extends TelegramLongPollingBot {
     @Autowired
     ReplyKey replyKey;
+
+    @Autowired
+    DtoService dtoService;
+    @Autowired
+    CourseParserService parserService;
 
     @Value("${bot.username}")
     private String botUsername;
@@ -39,7 +46,7 @@ public class CryptoScannerBot extends TelegramLongPollingBot {
         } else if (message.equals(ButtonEnum.GET_CURRENT_COURSE.getButton())) {
             sendMessage(chatId,MessageEnum.CURRENT_ACTUALLY);
         } else if (message.equals("/start2")) {
-
+            dtoService.save(parserService.currentValues("ETH"));
         }
 
     }

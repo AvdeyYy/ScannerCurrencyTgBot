@@ -3,19 +3,20 @@ package com.example.ValueScannerBot.service;
 import com.example.ValueScannerBot.dto.CourseDto;
 import com.example.ValueScannerBot.repository.CourseRepository;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Data
-public class C1 {
+
+public class DtoService {
     @Autowired
-    private  CourseRepository courseRepository;
-    private  CourseParserService parserService = new CourseParserService();
+    private final CourseRepository courseRepository;
 
-    public void save( CourseDto courseDto){
-       courseRepository.save(courseDto);
+
+    public void save(CourseDto dto){
+        courseRepository.save(dto);
     }
-
 
 }

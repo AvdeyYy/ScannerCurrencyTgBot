@@ -15,12 +15,15 @@ public class CourseDto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @SerializedName("asses_id")
-    private String asset_id;
-    @SerializedName("name")
-    private String name;
-    @SerializedName("price_usd")
-    private String price_usd;
+//    @SerializedName("time")
+    private String time;
+//    @SerializedName("asset_id_base")
+    private String asset_id_base;
+//    @SerializedName("asset_id_quote")
+    private String asset_id_quote;
+
+//    @SerializedName("rate")
+    private String rate;
 
 
 
