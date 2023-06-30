@@ -1,7 +1,7 @@
 # ScannerCurrencyTgBot
-This is a telegram bot that processes and sends certain information from crypto exchanges.
+# This is a telegram bot that processes and sends certain information from crypto exchanges.
 
-This project is still at the initial stage of development, gradually it will become more ambitious and innovative.
+# This project is still at the initial stage of development, gradually it will become more ambitious and innovative.
 
 At this stage of development, the following libraries and technologies are used
  - Java 20 - Used for all work
